@@ -15,7 +15,7 @@ const FormPane = ({ onSearch }) => {
   useEffect(() => {
     const fetchFacilityTypes = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/csv/facility-types');
+        const response = await axios.get('http://localhost:8000/csv/facility-types');
         console.log('Facility types fetched:', response.data.facilityTypes);
         setFacilityTypes(response.data.facilityTypes || []);
       } catch (error) {
@@ -32,7 +32,7 @@ const FormPane = ({ onSearch }) => {
     debounce(async (query) => {
       try {
         console.log('Fetching food items with query:', query);
-        const response = await axios.get(`http://localhost:3000/csv/filter-food-items?food=${query}`);
+        const response = await axios.get(`http://localhost:8000/csv/filter-food-items?food=${query}`);
         console.log('Food items response:', response.data);
 
         // Extract food items directly from the response

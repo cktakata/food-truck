@@ -9,7 +9,7 @@ const App = () => {
   const handleSearch = async (searchParams) => {
     try {
       const response = await axios.get(
-        'http://localhost:3000/csv/nearby-food-trucks',
+        'http://localhost:8000/csv/nearby-food-trucks',
         {
           params: searchParams,
         }
